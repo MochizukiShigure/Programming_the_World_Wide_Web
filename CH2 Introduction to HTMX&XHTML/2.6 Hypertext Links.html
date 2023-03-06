@@ -48,7 +48,8 @@ HTML中使用的标签<a>来设置超文本链接
   
 3.超链接的表示
 当你把鼠标移动到网页中的某个链接上时，箭头就会变成一个小手
-
+      
+example1:
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,4 +61,18 @@ HTML中使用的标签<a>来设置超文本链接
 <body>
     <a href="https://mini.eastday.com/nsa/n221001133132064.html?qid=00316">东方资讯</a>
 </body>
+</html>
+      
+example2:
+<html>
+    <head><title>页面链接代码演示</title></head>
+    <body>
+        <!-- href属性如果不加协议的话，默认是file://协议 -->
+        <a href="d:/a">超链接1-- href属性默认的协议是：file:// 协议</a>   <br/>
+        <a href="file://d:/a">超链接2--href属性默认的协议是：file://</a><br/>
+        <a href="http://www.hncu.net">超链接3--当超链接到网页时，href属性要填http://</a><br/>
+        <a href="http://14.215.177.38">超链接4--当超链接到网页时，href属性要填http:// 用IP</a><br/>
+        <!-- href属性还可以是迅雷协议 thunder:// 可以打开迅雷软件 -->
+        <a href="thunder://dshjjewhuewiewuiew==1">超链接5--当用迅雷软件打开当前链接时，href属性要填:thunder://...</a> <br/>
+    </body>
 </html>
