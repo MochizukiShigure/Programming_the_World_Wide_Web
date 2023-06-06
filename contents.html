@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contents</title>
+    <link rel="stylesheet" href="contents.css">
+</head>
+
+<body>
+    <div class="tree">
+        <!--
+        <details>
+            <summary><span class="title">fruit</span></summary>
+            <details>
+                <summary><span class="title">apple</span></summary>
+                <p>HTML</p>
+                <P>CSS</P>
+                <P>JS</P>
+            </details>
+            <details>
+                <summary><span class="title">banana</span></summary>
+            </details>
+        </details>
+        --> 
+    </div>
+    <script>
+        const list =[
+            {
+                name:"furit",
+                children:[
+                    {
+                        name:"apple",
+                        children:[
+                            {
+                                name:"red apple",
+                            },
+                            {
+                                name:"green apple",
+                            },
+                            {
+                                name:"yellow apple"
+                            }
+                        ]
+                    },
+                    {
+                        name:"banana"
+                    }
+                ]
+            },{
+                name:"vegetable",
+                children:[
+                    {
+                        name:" carrot"
+                    },
+                    {
+                        name:"potato"
+                    }
+                ]
+            }
+        ]
+
+        function creatTree(data,el){
+            data.forEach(d =>{
+                if(d.children?.length){
+                    const detials = document.createElement("details")
+                    detials.innerHTML = `<summary><span class = 'title'>${d.name}</summary>`
+                    el.appendChild(detials)
+                    creatTree(d.children,detials)
+                }else{
+                    const p = document.createElement("p")
+                    p.innerHTML = d.name
+                    el.appendChild(p)
+                }
+            });
+        }
+
+        creatTree(list,document.querySelector(".tree"))
+    </script>
+</body>
+</html>
